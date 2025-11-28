@@ -68,12 +68,11 @@
       font-size: 1.8rem;
     }
 
-    /* VIDEO - ajustado para permitir sobreposição */
     .video-container {
       width: 100%;
       height: 200px;
       overflow: hidden;
-      position: relative; /* ← necessário para z-index funcionar corretamente */
+      position: relative;
       background: black;
     }
 
@@ -87,18 +86,17 @@
       z-index: 1;
     }
 
-    /* FOTO SOBRE O VÍDEO */
     .photo {
       text-align: center;
-      margin-top: -110px; /* sobe visualmente sobre o vídeo */
+      margin-top: -110px;
       position: relative;
-      z-index: 2; /* garante que fique acima do vídeo */
+      z-index: 2;
     }
 
     .photo img {
       width: 158px;
       height: 150px;
-      margin: 0 auto; /* centraliza sem margem lateral extra */
+      margin: 0 auto;
       border-radius: 50%;
       object-fit: cover;
       border: 10px solid #4caf50;
@@ -355,7 +353,7 @@
 
     .modal-content {
       background: white;
-      padding: 5px;
+      padding: 20px;
       border-radius: 20px;
       max-width: 320px;
       text-align: center;
@@ -484,11 +482,10 @@
         <i class="fas fa-map-marker-alt"></i>
         <span>Local</span>
       </a>
-      <a href="https://wa.me/5521992135313?text=Ol%C3%A1%21%20Confirmo%20presen%C3%A7a%20na%20festa%20do%20Javier%20Nicolas!" 
-         target="_blank" class="btn btn-confirmar">
+      <div class="btn btn-confirmar" onclick="openConfirmModal()">
         <i class="fab fa-whatsapp"></i>
         <span>Confirmar</span>
-      </a>
+      </div>
       <div class="btn btn-sugestao" onclick="openGiftModal()">
         <i class="fas fa-gift"></i>
         <span>Sugestão</span>
@@ -514,7 +511,7 @@
 
   </div>
 
-  <!-- MODAL DE SUGESTÃO -->
+  <!-- MODAL DE SUGESTÃO DE PRESENTES -->
   <div id="giftModal" class="modal">
     <div class="modal-content">
       <h3>🎁SUGESTÃO DE PRESENTES🎁</h3>
@@ -525,6 +522,15 @@
         <li>🧸 Brinquedo</li>
       </ul>
       <button onclick="closeGiftModal()">OK</button>
+    </div>
+  </div>
+
+  <!-- MODAL DE AVISO ANTES DO WHATSAPP -->
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <h3>⚠️ Atenção!</h3>
+      <p>Convidado não convida!</p>
+      <button onclick="proceedToWhatsApp()">OK</button>
     </div>
   </div>
 
@@ -571,8 +577,16 @@
     function closeGiftModal() {
       document.getElementById('giftModal').style.display = 'none';
     }
+
+    function openConfirmModal() {
+      document.getElementById('confirmModal').style.display = 'flex';
+    }
+
+    function proceedToWhatsApp() {
+      document.getElementById('confirmModal').style.display = 'none';
+      window.open('https://wa.me/5521992135313?text=Ol%C3%A1%21%20Confirmo%20presen%C3%A7a%20na%20festa%20do%20Javier%20Nicolas%21', '_blank');
+    }
   </script>
 
 </body>
 </html>
-
