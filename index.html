@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Convite 3 Palavrinhas - Javier Nicolas</title>
-  <link rel="icon" href="https://lh3.googleusercontent.com/d/10Jumc7LCcvafa29opGKMMpJE98vJRsO8">
+  <link rel="icon" href="https://lh3.googleusercontent.com/d/10Jumc7LCcvafa29opGKMMpJE98vJRsO8  ">
   <style>
     * {
       margin: 0;
@@ -14,7 +14,8 @@
     }
 
     body {
-      background: url('https://lh3.googleusercontent.com/d/1YYM5lZwbFmZU8Ir-f4NmkLJ-D71Lf-gN') no-repeat center center fixed;
+      /* Removido o background de imagem e substituído por fundo branco */
+      background: #ffffff; /* Fundo branco para destacar o vídeo */
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -66,6 +67,25 @@
       top: 15px;
       color: #ff9800;
       font-size: 1.8rem;
+    }
+
+    /* Novo estilo para o container do vídeo */
+    .video-container {
+      width: 100%;
+      height: 200px; /* Altura fixa para o vídeo */
+      overflow: hidden;
+      position: relative;
+      background: black; /* Fundo preto caso o vídeo falhe */
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Mantém a proporção e cobre todo o container */
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
     }
 
     .photo {
@@ -396,12 +416,16 @@
       .buttons { padding: 15px; }
       .btn { width: 60px; height: 60px; }
       .btn i { font-size: 1.3rem; }
+      /* Ajuste responsivo para o vídeo */
+      .video-container {
+        height: 150px;
+      }
     }
   </style>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css  " />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka  :wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -415,13 +439,21 @@
       <div class="icon-right"><i class="fas fa-birthday-cake"></i></div>
     </div>
 
+    <!-- VIDEO -->
+    <div class="video-container">
+      <!-- Link fictício para o GitHub. Substitua pela URL real do seu vídeo no repositório. -->
+      <video autoplay muted loop playsinline>
+        <source src="videoplayback.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+
     <!-- FOTO DO BEBÊ -->
     <div class="photo">
-      <img src="https://lh3.googleusercontent.com/d/1A-V3lPNYJVRQXCjOyaTb8nneCBAi4MaF" alt="Foto do bebê">
+      <img src="https://lh3.googleusercontent.com/d/1A-V3lPNYJVRQXCjOyaTb8nneCBAi4MaF  " alt="Foto do bebê">
     </div>
 
     <!-- NOME E IDADE -->
-
 
     <!-- MENSAGEM -->
     <div class="message">"Por este menino orava eu; e o Senhor me concedeu a petição que eu lhe fizera" 1Samuel 1:27</div>
@@ -452,7 +484,7 @@
     <!-- MAPA -->
     <div class="map-container">
       <iframe 
-        src="https://maps.google.com/?q=Rio+Minas+Nil%C3%B3polis+Estr.+Ant%C3%B4nio+Jos%C3%A9+Bitencourt+690&output=embed"
+        src="https://maps.google.com/?q=Rio+Minas+Nil%C3%B3polis+Estr.+Ant%C3%B4nio+Jos%C3%A9+Bitencourt+690&output=embed  "
         frameborder="0"
         allowfullscreen>
       </iframe>
@@ -460,12 +492,12 @@
 
     <!-- BOTÕES -->
     <div class="buttons">
-      <a href="https://maps.google.com/?q=Rio+Minas+Nil%C3%B3polis+Estr.+Ant%C3%B4nio+Jos%C3%A9+Bitencourt+690" 
+      <a href="https://maps.google.com/?q=Rio+Minas+Nil%C3%B3polis+Estr.+Ant%C3%B4nio+Jos%C3%A9+Bitencourt+690  " 
          target="_blank" class="btn btn-local">
         <i class="fas fa-map-marker-alt"></i>
         <span>Local</span>
       </a>
-      <a href="https://wa.me/5521992135313?text=Ol%C3%A1%21%20Confirmo%20presen%C3%A7a%20na%20festa%20do(a)%20Javier%20Nicolas!" 
+      <a href="https://wa.me/5521992135313?text=Ol%C3%A1%21%20Confirmo%20presen%C3%A7a%20na%20festa%20do  (a)%20Javier%20Nicolas!" 
          target="_blank" class="btn btn-confirmar">
         <i class="fab fa-whatsapp"></i>
         <span>Confirmar</span>
@@ -567,4 +599,3 @@
 </body>
 
 </html>
-
